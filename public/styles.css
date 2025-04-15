@@ -539,10 +539,9 @@ footer {
         height: 30px;
     }
 
-    .about-content {
-        flex-direction: column-reverse; /* Stack elements with image on top */
-        text-align: center;
-        padding: 2rem 1rem;
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
 
     .profile-image {
@@ -594,37 +593,7 @@ footer {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Particle Effects */
-#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
 
-.particle {
-    position: fixed;
-    pointer-events: none;
-    opacity: 0;
-    animation: particleAnimation 3s ease-in infinite;
-}
-
-@keyframes particleAnimation {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100px) translateX(100px);
-        opacity: 0;
-    }
-}
 
 /* Hover Effects */
 .skill-card {
@@ -662,36 +631,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Form Animations */
-.contact-form {
-    position: relative;
-}
-
-.contact-form.submitted::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    opacity: 0.1;
-    animation: formSubmit 1s ease-out forwards;
-}
-
-@keyframes formSubmit {
-    0% {
-        transform: scale(0);
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.2;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
 
 /* Enhanced Glassmorphism */
 .skill-card,
@@ -955,23 +894,16 @@ section h2,
 }
 
 .language-card {
-    position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 2rem 1.5rem;
-    border-radius: 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    min-height: 320px;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .language-card::before {
@@ -996,19 +928,19 @@ section h2,
 }
 
 .language-card img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 1.5rem;
-    z-index: 2;
-    position: relative;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
-    transition: all 0.4s ease;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary-color);
+    padding: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .language-card:hover img {
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 15px rgba(0, 255, 242, 0.5));
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--primary-color);
 }
 
 .language-card h3 {
@@ -1030,10 +962,9 @@ section h2,
 /* New features for language cards */
 .experience-level {
     width: 100%;
-    margin: 10px 0 15px;
+    margin-top: 0.5rem;
+    margin-bottom: 0; /* Remove bottom margin */
     text-align: center;
-    position: relative;
-    z-index: 2;
 }
 
 .skill-level {
@@ -1043,7 +974,7 @@ section h2,
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .skill-level span {
@@ -1058,12 +989,9 @@ section h2,
 }
 
 .experience-level p {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 0.25rem 0 0 0; /* Adjust top margin only */
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .language-description {
@@ -1190,7 +1118,6 @@ section h2,
     .language-card img {
         width: 60px;
         height: 60px;
-        margin-bottom: 1rem;
     }
     
     .language-card h3 {
@@ -1495,75 +1422,6 @@ section h2,
     z-index: 1001;
 }
 
-/* Software Application Section */
-.software {
-    background: linear-gradient(
-        to bottom,
-        rgba(10, 10, 31, 0.95),
-        rgba(10, 10, 31, 0.8)
-    );
-    padding: 5rem 2rem;
-    text-align: center;
-}
-
-.software-link {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s ease;
-}
-
-.software-link:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 255, 242, 0.2);
-}
-
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0, 255, 242, 0.4);
-}
-
-.download-btn i {
-    font-size: 1.4rem;
-    animation: bounce 2s infinite;
-}
-
-.software-note {
-    margin-top: 1.5rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    font-size: 0.9rem;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
