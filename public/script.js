@@ -176,18 +176,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Project gallery image data
     const projectGalleries = {
         'partey': [
-            { src: 'parteydash.jpg', caption: 'Parteyz Catering Service - Home' }
+            { src: 'proj/parteydash.jpg', caption: 'Parteyz Catering Service - Home' }
         ],
         'halou': [
-            { src: 'halouadmin.png', caption: 'Admin Dashboard' },
-            { src: 'haloudash.png', caption: 'dashboard' }
+            { src: 'proj/halouadmin.png', caption: 'Admin Dashboard' },
+            { src: 'proj/haloudash.png', caption: 'dashboard' }
         ],
         'task': [
-            { src: 'dashtask.png', caption: 'TaskMatrix - Home' },
-            { src: 'taskmobile.png', caption: 'Mobile View' },
-            { src: 'app1.png', caption: 'Mobile View' },
-            { src: 'app2.png', caption: 'Mobile View' },
-            { src: 'app3.png', caption: 'Mobile View' }
+            { src: 'proj/dashtask.png', caption: 'TaskMatrix - Home' },
+            { src: 'proj/taskmobile.png', caption: 'Mobile View' },
+            { src: 'proj/app1.png', caption: 'Mobile View' },
+            { src: 'proj/app2.png', caption: 'Mobile View' },
+            { src: 'proj/app3.png', caption: 'Mobile View' }
         ]
     };
 
@@ -309,13 +309,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const certificateData = {
         'nc3': {
             title: 'National Certificate III',
-            image: 'nc3.jpg', // Updated image path
+            image: 'proj/nc3.jpg', // Updated image path
             date: 'Issued: July 6, 2023',
             description: 'National Certificate III in Event Management Services. This certification confirms skills in organizing events, managing logistics, handling clients, and supporting technical aspects of event operations.'
         },
         'drrmo': {
             title: 'DRRMO Training Certificate',
-            image: 'drrmo.jpg', // Updated image path
+            image: 'proj/drrmo.jpg', // Updated image path
             date: 'Issued: August 30, 2022',
             description: 'Disaster Risk Reduction Management Office certification for emergency response and preparedness. This training covered disaster prevention, mitigation, response, and recovery procedures.'
         },
