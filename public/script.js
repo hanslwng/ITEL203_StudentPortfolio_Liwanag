@@ -318,6 +318,12 @@ document.addEventListener('DOMContentLoaded', function() {
             image: 'drrmo.jpg', // Updated image path
             date: 'Issued: August 30, 2022',
             description: 'Disaster Risk Reduction Management Office certification for emergency response and preparedness. This training covered disaster prevention, mitigation, response, and recovery procedures.'
+        },
+        'resume': {
+            title: 'Professional Resume',
+            image: 'resume.pdf',
+            date: 'Last Updated: April 2025',
+            description: 'My professional resume detailing work experience, skills, and educational background.'
         }
     };
 
@@ -337,6 +343,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get certificate ID from data attribute
             const certificateId = this.getAttribute('data-certificate');
+            
+            // Special handling for resume
+            if (certificateId === 'resume') {
+                window.open('resume.pdf', '_blank');
+                return;
+            }
+            
             const certificate = certificateData[certificateId];
             
             if (certificate) {

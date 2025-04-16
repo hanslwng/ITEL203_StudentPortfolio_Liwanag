@@ -936,6 +936,9 @@ section h2,
     border: 2px solid var(--primary-color);
     padding: 2px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* Add background color */
+    aspect-ratio: 1 / 1; /* Ensure perfect circle */
+    display: block; /* Prevent layout shifts */
 }
 
 .language-card:hover img {
@@ -2114,6 +2117,23 @@ section h2,
     border-color: rgba(239, 83, 80, 0.4);
     box-shadow: 0 10px 30px rgba(239, 83, 80, 0.1);
     transform: translateY(-5px);
+}
+
+/* Resume certificate button styles */
+.certificate-btn.resume .certificate-icon {
+    background: rgba(234, 67, 53, 0.1);
+    color: #EA4335;
+}
+
+.certificate-btn.resume:hover {
+    border-color: #EA4335;
+    background: rgba(234, 67, 53, 0.05);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(234, 67, 53, 0.1);
+}
+
+.certificate-btn.resume .view-certificate {
+    color: #EA4335;
 }
 
 /* Certificate Modal */
