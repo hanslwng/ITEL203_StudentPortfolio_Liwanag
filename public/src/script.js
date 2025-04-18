@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'resume': {
             title: 'Professional Resume',
-            image: 'resume.pdf',
+            image: 'src/resume.pdf',
             date: 'Last Updated: April 2025',
             description: 'My professional resume detailing work experience, skills, and educational background.'
         }
